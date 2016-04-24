@@ -1,0 +1,36 @@
+{
+  "name": "library",
+  "version": "1.0.0",
+  "description": "test library",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "express": "^4.13.3",
+    "gulp-concat": "^2.6.0",
+    "google-closure-compiler": "^20150920.0.0",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^3.2.2",
+    "gulp-jade": "^1.1.0",
+    "gulp-minify": "^0.0.10",
+    "gulp-less": "^3.0.5",
+    "less": "^2.6.1",
+    "jade": "^1.11.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "library",
+    "js",
+    "html",
+    "css",
+    "less",
+    "jade",
+    "gulp",
+    "nodejs"
+  ],
+  "author": "quc",
+  "license": "MIT"
+}
