@@ -1,0 +1,64 @@
+-
+  keyList = ["title",
+             "author",
+             "genre",
+             "year",
+             "ISBN",
+             "views"]
+
+doctype html
+html(lang="en")
+  include ./includes/head.jade 
+  body
+    header
+      .homepage
+        a(href="/") library
+        
+      nav.sort
+        span.title 
+          button.sort_button(type="button") sort by
+            span.sort_variant author
+          button.sort_reverse(type="button")
+            i.material-icons swap_vert
+        ul.sort_list
+          each item in keyList
+            li(name= item)= item
+      
+      .add_new_book 
+        button.add_book(type="button")
+          span new book
+          i.material-icons add
+    
+    content#content
+    .popup_wrapper
+      .popup
+        .top 
+          button.close(type="button"): i.material-icons close
+        form.form
+          each item in keyList
+            .input
+              if item == 'year'
+                input.form_input(type="number" value='2016' name='year' placeholder=item)
+              else if item == 'views'
+                input.form_input(type="text" name='image' placeholder='Image URL')
+              else if item == 'author' || item == 'genre'
+                input.form_input(type="text" name=item placeholder=item)
+                ul.available_list
+
+              else
+                input.form_input(type="text" name=item placeholder=item)
+        .action
+          .left
+            button.cancel(type="button") cancel
+          .right
+            button.save(type="button") save
+      
+      .question
+        span.message delete file?
+        .action
+          .left
+            button.reject(type="button") cancel
+          .right
+            button.accept(type="button") ok
+    footer
+      
