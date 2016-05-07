@@ -1,6 +1,5 @@
 .user-select-none {
   -webkit-user-select: none;
-  -moz-user-select: none;
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
@@ -172,7 +171,6 @@ header .sort ul li {
   padding: 0.25em 0;
   cursor: pointer;
   -webkit-user-select: none;
-  -moz-user-select: none;
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
@@ -332,7 +330,6 @@ content#content .card_block .action_block .remove_block button {
   background-color: inherit;
   padding: 0;
   -webkit-user-select: none;
-  -moz-user-select: none;
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
@@ -365,20 +362,24 @@ content#content .card_block .action_block .remove_block button {
 }
 .popup_wrapper {
   position: fixed;
-  display: none;
+  visibility: hidden;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  opacity: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
 }
 .popup_wrapper.open {
-  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 .popup_wrapper .popup {
-  display: none;
   position: absolute;
+  visibility: hidden;
   height: 20em;
   width: 25em;
   background-color: #fff;
@@ -387,9 +388,19 @@ content#content .card_block .action_block .remove_block button {
   margin-left: -12.5em;
   margin-top: -10em;
   padding: 1em;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 .popup_wrapper .popup.open {
-  display: block;
+  visibility: visible;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
 }
 .popup_wrapper .popup .top {
   display: block;
@@ -526,4 +537,12 @@ content#content .card_block .action_block .remove_block button {
 footer {
   height: 3em;
   background-color: #4780b4;
+  text-align: center;
+  color: #fff;
+}
+footer .copyright {
+  padding: 1em 0;
+}
+footer .copyright a {
+  text-decoration: underline;
 }

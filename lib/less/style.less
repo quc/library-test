@@ -426,24 +426,27 @@ content#content {
 
 .popup_wrapper {
   position: fixed;
-  display: none;
+  visibility: hidden;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  opacity: 0;
   background-color: rgba(0, 0, 0, .5);
   z-index: 999;
+  transition: opacity 0.4s;
 
   &.open {
-    display: block;
+    visibility: visible;
+    opacity: 1;
   }
 
   @popup-height: 20em;
   @popup-width: 25em;
 
   .popup {
-    display: none;
     position: absolute;
+    visibility: hidden;
     height: @popup-height;
     width: @popup-width;
     background-color: #fff;
@@ -452,9 +455,12 @@ content#content {
     margin-left: -@popup-width / 2;
     margin-top: -@popup-height / 2;
     padding: 1em;
+    transition: transform 0.5s;
+    transform: translateY(-50%);
 
     &.open {
-      display: block;
+      visibility: visible;
+      transform: translateY(0);
     }
 
     .top {
@@ -626,4 +632,14 @@ content#content {
 footer {
   height: @footer-height;
   background-color: @base-lighter;
+  text-align: center;
+  color: #fff;
+
+  .copyright {
+    padding: @footer-height / 3 0;
+
+    a {
+      text-decoration: underline;
+    }
+  }
 }

@@ -1,3 +1,4 @@
 .git
+gh-pages
 node_modules
 server.js

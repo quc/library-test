@@ -5,6 +5,8 @@ var minify = require('gulp-minify');
 var jade = require('gulp-jade');
 var connect = require('gulp-connect');
 var concat = require('gulp-concat');
+var autoprefixer = require('gulp-autoprefixer');
+
 
 var paths = {
   less: 'lib/less/*.less',
@@ -28,6 +30,9 @@ gulp.task('less', function () {
     .pipe(less({
       paths: [paths.less]
     }))
+    .pipe(autoprefixer({
+      browsers: ['> 5%', 'IE 9']
+    }))
     .pipe(gulp.dest(paths.css))
     .pipe(connect.reload());
 });
@@ -38,6 +43,7 @@ gulp.task('compress', function() {
         ext:{
             min:'.min.js'
         },
+        noSource : true,
         ignoreFiles: ['-min.js']
     }))
     .pipe(gulp.dest(paths.jsmin))
