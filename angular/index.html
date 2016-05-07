@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link rel="stylesheet" href="dist/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>ng-library</title>
+</head>
+<body ng-app="library" ng-cloak>
+  <div ng-controller="AppController">
+    <header>
+      <nav>
+        <div class="nav-wrapper dark-grey-blue-2">
+          <div class="row">
+            <div class="col s4 m2">
+              <ul>
+                <li class="letter-spacing-4">
+                  <a href="/">{{'library' | uppercase}}</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col s5 m7">
+              <ul>
+                <li class="dropdown letter-spacing-3">
+                  <a ng-class="{active:dropdown}" ng-click="toggleDropdown()">{{'sort by' | uppercase}}<span class="sort-title">{{sort | uppercase}}</span></a>
+                  <ul ng-show="dropdown" ng-model="sortBy">
+                    <li ng-repeat="item in orderParams" ng-click="select(item)">{{item | uppercase}}</li>
+                  </ul>
+                </li>
+                <li><a ng-class="{active:reverseSort}" ng-click="reverseSort = !reverseSort"><i class="material-icons">swap_vert</i></a></li>
+              </ul>
+            </div>
+            <div class="col s3 m3 right-align">
+              <ul>
+                <li class="right">
+                  <a class="letter-spacing-2" ng-click="newBook()">{{'new book' | uppercase}}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Cards -->
+    <content>
+      <div class="row">
+        <div class="col s12 l6" ng-repeat="card in books | orderBy:sort:reverseSort track by card.ISBN">
+          <div class="card very-small hoverable z-depth-1">
+            <div class="card-image left">
+              <img ng-src="{{card.image}}" alt="{{card.title}}" />
+            </div>
+            <div class="card-content left">
+              <ul class="titles left">
+                <li>Title</li>
+                <li>Author</li>
+                <li>Genre</li>
+                <li>Year</li>
+                <li>ISBN</li>
+                <li>Views</li>
+              </ul>
+              <ul class="card-info left">
+                <li class="truncate">{{card.title || 'Unknown'}}</li>
+                <li class="truncate">{{card.author.join(", ")}}</li>
+                <li class="truncate">{{card.genre.join(", ")}}</li>
+                <li class="truncate">{{card.year || 'Unknown'}}</li>
+                <li class="truncate">{{card.ISBN || 'Unknown'}}</li>
+                <li class="truncate">{{card.views || 0}}</li>
+              </ul>
+            </div>
+            <div class="card-action right">
+              <a ng-click="editBook(card)" class="edit"><i class="material-icons">edit</i></a>
+                <a ng-click="deleteBook(card)" class="delete"><i class="material-icons">delete_forever</i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </content>
+
+     <!-- Modal -->
+    <div id="popup" class="modal">
+      <div class="exit-container">
+        <i class="material-icons right modal-action modal-close">close</i>
+      </div>
+      <div class="row">
+        <form name="bookForm" class="col s12">
+          <div class="row">
+            <div class="input-field col s12" ng-repeat="(key, val) in initInputs">
+              <input ng-model="inputs[key]" type="{{val.type}}" placeholder="{{key | capitalize}}" ng-focus="focus=true" ng-blur="focus=false" ng-value="{{val.value}}">
+              <ul class="liveresults collection" ng-if="focus  && (key == 'author' || key == 'genre')">
+                <li ng-mousedown="addItem(key, item)" class="collection-item" ng-repeat="item in liveresults[key+'s']">
+                  {{item}}
+                  <a ng-click="liveresults[key+'s'].splice($index, 1)" class="secondary-content"><i class="material-icons">delete_forever</i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+          <div class="col s6 push-s6">
+            <a ng-click="saveBook()" class="waves-effect waves-light btn dark-grey-blue-1">SAVE</a>
+          </div>
+          <div class="col 6 pull-s6">
+            <a ng-click="closePopup()" class="waves-effect waves-light btn dark-grey-blue-1 left">CANCEL</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="dist/js/controllers.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+</body>
+</html>

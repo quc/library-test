@@ -1,0 +1,81 @@
+[{
+	"author": ["Wacky Rhino", "Lumpy Hamster"],
+	"genre": ["Satire", "Realistic fiction"],
+	"title": "Marsless",
+	"year": 1989,
+	"ISBN": "978-5-8459-1937-3",
+	"image": "http://static2.ozone.ru/multimedia/books_covers/1008879389.jpg",
+	"views": 0
+}, {
+	"author": ["Wacky Rhino", "Greasy Potato"],
+	"genre": ["Drama", "Satire"],
+	"title": "The Journey Dragoon",
+	"year": 2006,
+	"ISBN": "978-5-699-67603-3",
+	"image": "http://static2.ozone.ru/multimedia/books_covers/1008879298.jpg",
+	"views": 0
+}, {
+	"author": ["Dinky Gross", "Crusty"],
+	"genre": ["Romance novel", "Tragicomedy"],
+	"title": "Beyond the Flaming Daughter",
+	"year": 1997,
+	"ISBN": "978-5-8459-1922-9",
+	"image": "http://static2.ozone.ru/multimedia/books_covers/1014478168.jpg",
+	"views": 0
+}, {
+	"author": ["Runny Snicker", "Crusty"],
+	"genre": ["Horror", "Tragicomedy"],
+	"title": "Man of Window",
+	"year": 1994,
+	"ISBN": "978-5-496-01545-5",
+	"image": "http://static2.ozone.ru/multimedia/books_covers/1011362787.jpg",
+	"views": 0
+}, {
+	"author": ["Runny Snicker"],
+	"genre": ["Non-fiction"],
+	"title": "The Nothing-Room",
+	"year": 2011,
+	"ISBN": "978-5-496-01592-9",
+	"image": "http://static1.ozone.ru/multimedia/books_covers/1011071764.jpg",
+	"views": 0
+}, {
+	"author": ["Lumpy Hamster", "Tofu", "Dinky Gross"],
+	"genre": ["Comedy", "Non-fiction", "Drama"],
+	"title": "The North",
+	"year": 1980,
+	"ISBN": "978-1-449-32339-4",
+	"image": "http://static.ozone.ru/multimedia/books_covers/1014478210.jpg",
+	"views": 0
+}, {
+	"author": ["Dinky Gross", "Wacky Rhino"],
+	"genre": ["Drama", "Romance novel"],
+	"title": "The GuardAir",
+	"year": 2015,
+	"ISBN": "978-5-8459-2069-0",
+	"image": "http://static.ozone.ru/multimedia/books_covers/1011125111.jpg",
+	"views": 0
+}, {
+	"author": ["Lumpy Hamster", "Wacky Rhino"],
+	"genre": ["Realistic fiction", "Non-fiction"],
+	"title": "World Options",
+	"year": 1999,
+	"ISBN": "978-5-496-01441-0",
+	"image": "http://static2.ozone.ru/multimedia/books_covers/1014275857.jpg",
+	"views": 0
+}, {
+	"author": ["P.G. Boss"],
+	"genre": ["Tragedy"],
+	"title": "Great Damnations",
+	"year": 1995,
+	"ISBN": "978-5-699-79119-4",
+	"image": "http://static.ozone.ru/multimedia/books_covers/1010370201.jpg",
+	"views": 0
+}, {
+	"author": ["Wacky Rhino", "Crusty", "Runny Snicker"],
+	"genre": ["Romance novel", "Non-fiction", "Realistic fiction"],
+	"title": "Mysterious Childrens",
+	"year": 1980,
+	"ISBN": "978-5-8459-2081-2",
+	"image": "http://static1.ozone.ru/multimedia/books_covers/1014492964.jpg",
+	"views": 0
+}]

@@ -1,0 +1,224 @@
+/*
+* Text decorations vars
+*/
+
+$colorPaletteBackground : #4780b4, #3c6c98, #31587c;
+$colorPaletteText : #ffffff;
+
+@for $i from 1 through length($colorPaletteBackground) {
+  $item: nth($colorPaletteBackground, $i);
+
+  .dark-grey-blue-#{$i} {
+    color: $colorPaletteText;
+    background-color: $item;
+  }
+}
+
+@for $i from 1 through 4 {
+  .letter-spacing-#{$i} { letter-spacing: #{$i}px; }
+}
+
+/*
+* Header
+*/
+
+$navHeight : 3em;
+$dropdownListItemHeight : 2em;
+
+/*
+* Setting up default Google material icons size
+* !important is necessary to rewrite Materialize icons styles
+*/
+
+.line-height {
+  height: $navHeight / 2 !important;
+  line-height: $navHeight / 2 !important;
+}
+
+nav {
+  height: $navHeight;
+  line-height: $navHeight;
+
+  .nav-wrapper {
+    height: inherit;
+
+    .dropdown {
+      position: relative;
+
+      ul {
+        position: absolute;
+        color: #454545;
+        border: 1px solid #878787;
+        background-color: #ffffff;
+        border-top: none;
+        text-align: center;
+        z-index: 99;
+
+        li {
+          width: 100%;
+          height: $dropdownListItemHeight;
+          line-height: $dropdownListItemHeight;
+          cursor: pointer;
+
+          &:hover {
+            @extend .dark-grey-blue-2;
+          }
+        }
+      }
+
+      .sort-title {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 1.25em;
+        font-size: 0.7em;
+        text-align: center;
+      }
+    }
+  }
+
+  i {
+    @extend .line-height;
+  }
+}
+
+.active {
+  @extend .dark-grey-blue-3;
+}
+
+/*
+* Cards
+*/
+
+.card {
+  &.very-small {
+    height: 200px;
+  }
+
+  &.hoverable:hover {
+    box-shadow: 0 0px 6px 0 rgba(0,0,0,0.2),0 6px 6px 0 rgba(0,0,0,0.19);
+  }
+
+  .card-image {
+    height: 100%;
+
+    img {
+      display: inline-block;
+      height: inherit;
+      width: auto;
+      max-width: 10em;
+    }
+  }
+
+  .card-content {
+    display: inline-block;
+    width: 55%;
+
+    .card-info {
+      width: 65%;
+    }
+
+    ul {
+      display: inline-block;
+      margin: 0;
+      padding-right: 1em;
+
+      &.titles li:after {
+        content: ':';
+      }
+
+      li {
+        padding: 0.2em 0;
+      }
+    }
+  }
+
+  .card-action {
+    position: relative;
+    height: 100%;
+    border-top: 0;
+
+    a {
+      position: absolute;
+      cursor: pointer;
+
+      &.edit {
+        top: 0;
+        left: 0.5em;
+      }
+
+      &.delete {
+        bottom: 0;
+        left: 0.5em;
+      }
+
+      i {
+        @extend .line-height;
+        color: #777777;
+      }
+    }
+  }
+}
+
+/*
+* Popup window
+*/
+
+.modal {
+  width: 28em;
+  max-height: 80%;
+
+  input {
+    height: 1.5em;
+    margin: 0;
+  }
+
+  .liveresults {
+    max-height: 6em;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .collection-item {
+      padding: 4px 5px;
+      cursor: pointer;
+
+      &:hover {
+        @extend .dark-grey-blue-1;
+      }
+
+      .secondary-content {
+        color: inherit;
+
+        i {
+          line-height: 0.75em;;
+        }
+      }
+    }
+  }
+
+  .row {
+    margin-bottom: 0;
+  }
+
+  .exit-container .modal-close {
+    margin: 0 6px;
+  }
+
+  .modal-footer {
+    padding: 0 0.75rem;
+
+    a {
+      width: 10em;
+
+      &:hover {
+        @extend .dark-grey-blue-2;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    & {
+      width: 90%;
+    }
+  }
+}

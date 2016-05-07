@@ -1,0 +1,144 @@
+/*
+* Text decorations vars
+*/
+.dark-grey-blue-1, .modal .liveresults .collection-item:hover {
+  color: #ffffff;
+  background-color: #4780b4; }
+
+.dark-grey-blue-2, nav .nav-wrapper .dropdown ul li:hover, .modal .modal-footer a:hover {
+  color: #ffffff;
+  background-color: #3c6c98; }
+
+.dark-grey-blue-3, .active {
+  color: #ffffff;
+  background-color: #31587c; }
+
+.letter-spacing-1 {
+  letter-spacing: 1px; }
+
+.letter-spacing-2 {
+  letter-spacing: 2px; }
+
+.letter-spacing-3 {
+  letter-spacing: 3px; }
+
+.letter-spacing-4 {
+  letter-spacing: 4px; }
+
+/*
+* Header
+*/
+/*
+* Setting up default Google material icons size
+* !important is necessary to rewrite Materialize icons styles
+*/
+.line-height, nav i, .card .card-action a i {
+  height: 1.5em !important;
+  line-height: 1.5em !important; }
+
+nav {
+  height: 3em;
+  line-height: 3em; }
+  nav .nav-wrapper {
+    height: inherit; }
+    nav .nav-wrapper .dropdown {
+      position: relative; }
+      nav .nav-wrapper .dropdown ul {
+        position: absolute;
+        color: #454545;
+        border: 1px solid #878787;
+        background-color: #ffffff;
+        border-top: none;
+        text-align: center;
+        z-index: 99; }
+        nav .nav-wrapper .dropdown ul li {
+          width: 100%;
+          height: 2em;
+          line-height: 2em;
+          cursor: pointer; }
+      nav .nav-wrapper .dropdown .sort-title {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 1.25em;
+        font-size: 0.7em;
+        text-align: center; }
+
+/*
+* Cards
+*/
+.card.very-small {
+  height: 200px; }
+
+.card.hoverable:hover {
+  box-shadow: 0 0px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 6px 0 rgba(0, 0, 0, 0.19); }
+
+.card .card-image {
+  height: 100%; }
+  .card .card-image img {
+    display: inline-block;
+    height: inherit;
+    width: auto;
+    max-width: 10em; }
+
+.card .card-content {
+  display: inline-block;
+  width: 55%; }
+  .card .card-content .card-info {
+    width: 65%; }
+  .card .card-content ul {
+    display: inline-block;
+    margin: 0;
+    padding-right: 1em; }
+    .card .card-content ul.titles li:after {
+      content: ':'; }
+    .card .card-content ul li {
+      padding: 0.2em 0; }
+
+.card .card-action {
+  position: relative;
+  height: 100%;
+  border-top: 0; }
+  .card .card-action a {
+    position: absolute;
+    cursor: pointer; }
+    .card .card-action a.edit {
+      top: 0;
+      left: 0.5em; }
+    .card .card-action a.delete {
+      bottom: 0;
+      left: 0.5em; }
+    .card .card-action a i {
+      color: #777777; }
+
+/*
+* Popup window
+*/
+.modal {
+  width: 28em;
+  max-height: 80%; }
+  .modal input {
+    height: 1.5em;
+    margin: 0; }
+  .modal .liveresults {
+    max-height: 6em;
+    overflow-x: hidden;
+    overflow-y: auto; }
+    .modal .liveresults .collection-item {
+      padding: 4px 5px;
+      cursor: pointer; }
+      .modal .liveresults .collection-item .secondary-content {
+        color: inherit; }
+        .modal .liveresults .collection-item .secondary-content i {
+          line-height: 0.75em; }
+  .modal .row {
+    margin-bottom: 0; }
+  .modal .exit-container .modal-close {
+    margin: 0 6px; }
+  .modal .modal-footer {
+    padding: 0 0.75rem; }
+    .modal .modal-footer a {
+      width: 10em; }
+  @media only screen and (max-width: 600px) {
+    .modal {
+      width: 90%; } }
